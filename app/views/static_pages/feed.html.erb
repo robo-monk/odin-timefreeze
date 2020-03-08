@@ -1,0 +1,22 @@
+<h2>TimeFreeze - user : <%= @person_id %> </h2>
+
+<h3 style='color: red'><%= @error%></h3>
+
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:id, "TimeFreeze for:") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag(">") %>
+<% end %>
+
+<br>
+<br>
+
+<hr>
+<br>
+
+<% @photos.each do |photo| %>
+  <%= image_tag photo.source_url, size: "#{photo.width}x#{photo.height}" %>
+<% end %>
+
+
+
